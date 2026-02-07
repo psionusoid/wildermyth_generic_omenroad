@@ -1,0 +1,1580 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+	"modId": "generic_omenroad",
+	"author": "psionusoid"
+},
+"type": "PLOT",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.021, "y": 0.636 },
+							"size": 0.1525,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185442", "b": "0.80518836", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.15, "y": 0.5 },
+							"size": 0.5493,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.408, "y": 0.597 },
+							"size": 0.2875,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.337, "y": 0.059 },
+							"size": 0.2152,
+							"drawDepth": -0.375,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bucketsWoodSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.074, "y": 0.009 },
+							"size": 0.5436,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deskPapers.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.536, "y": 0.04 },
+							"size": 0.4678,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstLarge.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.998, "y": 0.5 },
+							"size": 0.2881,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185448", "b": "0.80518836", "a": "0.07514451" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.155, "y": 0.468 },
+							"size": 0.6123,
+							"drawDepth": -0.75,
+							"head": { "rotate": -28.744, "scaleY": -1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.033,
+							"padYFraction": 0.001,
+							"widthFraction": 0.95402634,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.286,
+							"padYFraction": 0.41,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.023, "y": 0.642 },
+							"size": 0.17018116,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185442", "b": "0.80518836", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.289, "y": 0.506 },
+							"size": 0.612987,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.82, "y": 0.603 },
+							"size": 0.32083333,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.674, "y": 0.065 },
+							"size": 0.24015072,
+							"drawDepth": -0.375,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bucketsWoodSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.132, "y": 0.015 },
+							"size": 0.6066261,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deskPapers.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.975, "y": 0.046 },
+							"size": 0.5220377,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstLarge.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.024, "y": 0.506 },
+							"size": 0.3215029,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185448", "b": "0.80518836", "a": "0.07514451" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": -1.759, "y": 0.474 },
+							"size": 0.51511884,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"head": { "rotate": -28.744, "scaleY": -1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.927, "y": 0.49 },
+							"size": 0.51511884,
+							"drawDepth": -1.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": 1.556, "scaleY": 1 },
+							"foot": { "rotate": -16.631 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"location": "bottomLeft",
+							"padXFraction": -0.691,
+							"padYFraction": 0.295,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_002~2_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.563,
+							"padYFraction": -0.008,
+							"widthFraction": 2.071494,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.871886,
+								"dX": 2.3078918E-4,
+								"dY": -0.9425354,
+								"scaleX": 0.5967953,
+								"scaleY": 0.5967953,
+								"pointerOrientV": "down",
+								"forcePointerImage": "speechMedium"
+							},
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.606, "y": 0.611 },
+							"size": 0.1525,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185442", "b": "0.80518836", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.691, "y": 0.475 },
+							"size": 0.5493,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.861, "y": 0.572 },
+							"size": 0.2875,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.814, "y": 0.034 },
+							"size": 0.2152,
+							"drawDepth": -0.375,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bucketsWoodSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.641, "y": -0.016 },
+							"size": 0.5436,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deskPapers.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.285, "y": 0.015 },
+							"size": 0.46780002,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstLarge.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.59, "y": 0.475 },
+							"size": 0.2881,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185448", "b": "0.80518836", "a": "0.07514451" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.232, "y": 0.549 },
+							"size": 0.6708,
+							"drawDepth": -0.75,
+							"nameTag": "none",
+							"head": { "rotate": 2.215, "scaleY": 1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.896, "y": 0.459 },
+							"size": 0.4616,
+							"drawDepth": -1.5,
+							"nameTag": "bottomRight",
+							"head": { "rotate": -29.696, "scaleY": -1 },
+							"foot": { "rotate": -4.194 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_003~1_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.563,
+							"padYFraction": -0.008,
+							"widthFraction": 2.071494,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -9.871886,
+								"dX": 2.3078918E-4,
+								"dY": -0.9425354,
+								"scaleX": 0.5967953,
+								"scaleY": 0.5967953,
+								"pointerOrientV": "down",
+								"forcePointerImage": "speechMedium"
+							},
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_003~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.223,
+							"widthFraction": 0.75634664,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": 5.65523, "dY": -2.8275864 }
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_003~3_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.022,
+							"padYFraction": 0.057,
+							"widthFraction": 0.54041433,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -10.007979,
+								"dX": -3.7702303,
+								"dY": 1.8850576,
+								"scaleX": 0.5878473,
+								"scaleY": 0.5878473,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.551, "y": 0.516 },
+							"size": 0.3115,
+							"nameTag": "none",
+							"color": { "r": "0.54335225", "g": "0.54335225", "b": "0.54335225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.251, "y": 0.689 },
+							"size": 0.563,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": -0.069 },
+							"size": 0.5499,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": 0.277 },
+							"size": 0.2269,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.93875498", "g": "0.88370901", "b": "0.61037725", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.688, "y": 0.352 },
+							"size": 3.9225,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.689, "y": 0.339 },
+							"size": 2.4901,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfScrolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.909, "y": 0.387 },
+							"size": 0.4727,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.481, "y": 0.34 },
+							"size": 0.423,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.791, "y": 0.554 },
+							"size": 0.5564,
+							"drawDepth": -0.375,
+							"head": { "rotate": 21.655 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.308, "y": 0.495 },
+							"size": 0.6477,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345 },
+							"foot": { "rotate": -33.934 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.408, "y": 0.545 },
+							"size": 0.7931,
+							"drawDepth": -2.5,
+							"head": { "rotate": -18.025 },
+							"foot": { "rotate": 6.67 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.033,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_004~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.599,
+							"padYFraction": 0.792,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.551, "y": 0.516 },
+							"size": 0.3115,
+							"nameTag": "none",
+							"color": { "r": "0.54335225", "g": "0.54335225", "b": "0.54335225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.251, "y": 0.689 },
+							"size": 0.563,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": -0.069 },
+							"size": 0.5499,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.69, "y": 0.277 },
+							"size": 0.2269,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.93875498", "g": "0.88370901", "b": "0.61037725", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.688, "y": 0.352 },
+							"size": 3.9225,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.689, "y": 0.339 },
+							"size": 2.4901,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfScrolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.909, "y": 0.387 },
+							"size": 0.4727,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.481, "y": 0.34 },
+							"size": 0.423,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.922, "y": 0.545 },
+							"size": 0.5564,
+							"drawDepth": -0.375,
+							"head": { "rotate": -17.64, "scaleY": -1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.301, "y": 0.501 },
+							"size": 0.6557,
+							"drawDepth": -1.75,
+							"head": { "rotate": -12.679, "scaleY": -1 },
+							"foot": { "rotate": -26.113 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.408, "y": 0.545 },
+							"size": 0.7931,
+							"drawDepth": -2.5,
+							"head": { "rotate": -20.597, "scaleY": -1 },
+							"foot": { "rotate": 6.67 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.033,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_005~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.599,
+							"padYFraction": 0.792,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_005~3_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_005~4_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padYFraction": 0.006,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_005~5_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.161,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"dX": 0,
+								"dY": 8.482759,
+								"scaleX": 0.6571002,
+								"scaleY": 0.6571002,
+								"pointerOrientH": "onRight"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.752, "y": 0.462 },
+							"size": 0.2921,
+							"nameTag": "none",
+							"color": { "r": "0.54335225", "g": "0.54335225", "b": "0.54335225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.326, "y": 0.624 },
+							"size": 0.5279,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.749, "y": -0.086 },
+							"size": 0.5156,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.949, "y": 0.238 },
+							"size": 0.2127,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.93875498", "g": "0.88370901", "b": "0.61037725", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.946, "y": 0.308 },
+							"size": 3.6778,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.948, "y": 0.296 },
+							"size": 2.3348,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfScrolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.26, "y": 0.341 },
+							"size": 0.4432,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.652, "y": 0.297 },
+							"size": 0.3966,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 1.348, "y": 0.53 },
+							"size": 0.5217,
+							"drawDepth": -0.375,
+							"head": { "rotate": -17.64, "scaleY": -1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.441, "y": 0.474 },
+							"size": 0.6561,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": 1 },
+							"foot": { "rotate": -5.169 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.062, "y": 0.511 },
+							"size": 0.7222,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": 1 },
+							"foot": { "rotate": 2.325 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-talk",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.898, "y": 0.45 },
+							"size": 0.7436,
+							"drawDepth": -2.5,
+							"head": { "rotate": -18.819, "scaleY": -1 },
+							"foot": { "rotate": 6.67 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.265,
+							"padYFraction": 0.023,
+							"widthFraction": 0.61844814,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.599,
+							"padYFraction": 0.792,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~3_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~4_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padYFraction": 0.006,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~5_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.186,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~6_hero4",
+							"pointerOwner": "hero4",
+							"location": "bottomLeft",
+							"padXFraction": 0.08,
+							"padYFraction": 0.099,
+							"widthFraction": 0.5648517,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.0260632,
+								"dX": -20.735636,
+								"dY": -3.7701151,
+								"scaleX": 0.45427662,
+								"scaleY": 0.45427662,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_006~7_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.225,
+							"widthFraction": 0.77556443,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 4.575143,
+								"dX": 9.425288,
+								"dY": 11.310346,
+								"scaleX": 0.76832527,
+								"scaleY": 0.76832527,
+								"pointerOrientH": "onLeft"
+							}
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": -0.554, "y": 0.475 },
+							"size": 0.3259667,
+							"nameTag": "none",
+							"color": { "r": "0.54335225", "g": "0.54335225", "b": "0.54335225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -1.431, "y": 0.637 },
+							"size": 0.5891058,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.56, "y": -0.073 },
+							"size": 0.5753797,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.149, "y": 0.251 },
+							"size": 0.23736086,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.93875498", "g": "0.88370901", "b": "0.61037725", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.155, "y": 0.321 },
+							"size": 4.1042113,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.151, "y": 0.309 },
+							"size": 2.6055014,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfScrolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.491, "y": 0.354 },
+							"size": 0.49458548,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.76, "y": 0.31 },
+							"size": 0.4425826,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.659, "y": 0.54 },
+							"size": 0.582187,
+							"drawDepth": -0.375,
+							"head": { "rotate": -13.486, "scaleY": 1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-interested",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -1.194, "y": 0.487 },
+							"size": 0.7321695,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": 1 },
+							"foot": { "rotate": -5.169 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -1.974, "y": 0.524 },
+							"size": 0.8059333,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": 1 },
+							"foot": { "rotate": 2.325 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-talk",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": -0.254, "y": 0.463 },
+							"size": 0.8298145,
+							"drawDepth": -2.5,
+							"head": { "rotate": -18.819, "scaleY": -1 },
+							"foot": { "rotate": 6.67 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.564,
+							"widthFraction": 0.91280824,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.599,
+							"padYFraction": 0.792,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~3_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~4_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padYFraction": 0.006,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~5_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.186,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~6_hero4",
+							"pointerOwner": "hero4",
+							"padXFraction": 0.092,
+							"padYFraction": 0.009,
+							"widthFraction": 0.5648517,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.0260632,
+								"dX": -8.482761,
+								"dY": -3.7701151,
+								"scaleX": 0.45427662,
+								"scaleY": 0.45427662,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~7_hero2",
+							"pointerOwner": "hero2",
+							"location": "bottomRight",
+							"padXFraction": 0.108,
+							"padYFraction": 0.112,
+							"widthFraction": 0.8942011,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_007~8_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.594,
+							"padYFraction": 0.32,
+							"widthFraction": 1.4225482,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 7.9071617,
+								"dX": -23.563105,
+								"dY": -3.7701151,
+								"scaleX": 0.75110406,
+								"scaleY": 0.75110406
+							},
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorNoWindow.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.519, "y": 0.471 },
+							"size": 0.2921,
+							"nameTag": "none",
+							"color": { "r": "0.54335225", "g": "0.54335225", "b": "0.54335225", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.238, "y": 0.633 },
+							"size": 0.5279,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:tableWood1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.517, "y": -0.077 },
+							"size": 0.5156,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.649, "y": 0.247 },
+							"size": 0.2127,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.93875498", "g": "0.88370901", "b": "0.61037725", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.647, "y": 0.317 },
+							"size": 3.6778,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "comic:gradientRoundWhite.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.649, "y": 0.305 },
+							"size": 2.3348,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "0.94889557", "g": "0.72156435", "b": "0.28231835", "a": "0.28612646" }
+						},
+						{
+							"assetSpec": "scenery:bookshelfScrolls.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.855, "y": 0.35 },
+							"size": 0.4432,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.453, "y": 0.306 },
+							"size": 0.3966,
+							"drawDepth": -1.5,
+							"nameTag": "none",
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.913, "y": 0.539 },
+							"size": 0.5217,
+							"drawDepth": -0.375,
+							"head": { "rotate": 4.045, "scaleY": 1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.314, "y": 0.483 },
+							"size": 0.6561,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": -1 },
+							"foot": { "rotate": -5.169 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.064, "y": 0.52 },
+							"size": 0.7222,
+							"drawDepth": -1.75,
+							"head": { "rotate": -0.345, "scaleY": 1 },
+							"foot": { "rotate": 2.325 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.616, "y": 0.459 },
+							"size": 0.7436,
+							"drawDepth": -2.5,
+							"head": { "rotate": -2.665, "scaleY": 1 },
+							"foot": { "rotate": 6.67 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"location": "bottomLeft",
+							"padXFraction": 0.08,
+							"widthFraction": 0.65492535,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.599,
+							"padYFraction": 0.792,
+							"widthFraction": 0.6932454,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~3_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padXFraction": 0.071,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~4_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"padYFraction": 0.006,
+							"widthFraction": 0.51707035,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~5_hero3",
+							"pointerOwner": "hero3",
+							"location": "bottomLeft",
+							"padXFraction": 0.186,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "pointerOrientH": "onRight" }
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~6_hero4",
+							"pointerOwner": "hero4",
+							"location": "bottomLeft",
+							"padXFraction": 0.08,
+							"padYFraction": 0.099,
+							"widthFraction": 0.5648517,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -3.0260632,
+								"dX": -20.735636,
+								"dY": -3.7701151,
+								"scaleX": 0.45427662,
+								"scaleY": 0.45427662,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~7_hero2",
+							"pointerOwner": "hero2",
+							"location": "topRight",
+							"padXFraction": 0.225,
+							"widthFraction": 0.77556443,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 4.575143,
+								"dX": 9.425288,
+								"dY": 11.310346,
+								"scaleX": 0.76832527,
+								"scaleY": 0.76832527,
+								"pointerOrientH": "onLeft"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_008~8_hero",
+							"pointerOwner": "hero",
+							"location": "topRight",
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineEvening.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.4568,
+							"nameTag": "none"
+						},
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": {},
+							"anchor": { "x": 0.32, "y": 0.494 },
+							"size": 0.5375,
+							"drawDepth": 0,
+							"head": { "rotate": 12.254 },
+							"color": { "r": "0.67326027", "g": "0.60706913", "b": "0.78599298", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 0.564, "y": 0.358 },
+							"size": 0.3853,
+							"drawDepth": 0.5,
+							"head": { "rotate": -5.747, "scaleY": -1 },
+							"color": { "r": "0.67326027", "g": "0.60706913", "b": "0.78599298", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-skeptical",
+							"equipment": {},
+							"anchor": { "x": 1.009, "y": 0.342 },
+							"size": 0.3853,
+							"drawDepth": 0.5,
+							"head": { "rotate": -9.458, "scaleY": 1 },
+							"color": { "r": "0.67326027", "g": "0.60706913", "b": "0.78599298", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.854, "y": 0.336 },
+							"size": 0.4544,
+							"drawDepth": 0,
+							"head": { "rotate": -30.496, "scaleY": 1 },
+							"color": { "r": "0.67326027", "g": "0.60706913", "b": "0.78599298", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"anchor": { "x": 0.017, "y": 0.21 },
+							"size": 0.2623,
+							"drawDepth": 0.75,
+							"head": { "rotate": -30.496, "scaleY": -1 },
+							"color": { "r": "0.67326027", "g": "0.60706913", "b": "0.78599298", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_009~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"widthFraction": 0.84090304,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone_victory",
+							"textKey": "~01~~panel_009~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"location": "bottomRight",
+							"padXFraction": 0.078,
+							"padYFraction": 0.003,
+							"widthFraction": 0.84090304,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "ancientCartographerMystic_generic",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "middleAge",
+					"setEquipment": "tierTwo",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}

@@ -1,0 +1,183 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_omen",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_omen",
+	"modId": "generic_omenroad",
+	"author": "psionusoid",
+	"genericCampaignInfo": {
+		"chapter": "mid",
+		"threatFlavor": "gorgon",
+		"plotId": "C_generic_keystone",
+		"capstoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+		"keystoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone"
+	}
+},
+"type": "PLOT_OMEN",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - Everyday Moments"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "role": "town", "template": "INJECTED_SITE", "injectedRole": "town" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(BOOKISH+(hook_Literary*60))+(LEVEL*5)",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "((LOVER_WITH.hero*50)+(FRIEND_WITH.hero*40))+SHIP_WITH.hero",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "LEVEL",
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_mountainsNight.jpg",
+							"role": null,
+							"focus": "foot",
+							"size": 0.3653,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.878, "y": 0.23 },
+							"size": 0.1162,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeRising.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.851, "y": 0.698 },
+							"size": 0.1209,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": 14.129 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.71965247" }
+						},
+						{
+							"assetSpec": "scenery:cartFull.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.742, "y": 0.079 },
+							"size": 0.1078,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treePine1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.628, "y": 0.267 },
+							"size": 0.1877,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:treePine3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.448, "y": 0.282 },
+							"size": 0.3262,
+							"drawDepth": 0.625,
+							"nameTag": "none",
+							"color": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.04, "y": 0.283 },
+							"size": 0.4457,
+							"drawDepth": 0.875,
+							"head": { "rotate": -13.074 },
+							"color": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_omen",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.053,
+							"padYFraction": 0.335,
+							"widthFraction": 0.7176311,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_omen",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"widthFraction": 0.6200892,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hero",
+					"setGender": "relativeIsAttracted",
+					"setAge": "closeTo",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}

@@ -1,0 +1,650 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+	"modId": "generic_omenroad",
+	"author": "psionusoid",
+	"declaredEncounterResults": [ "victory", "defeat" ]
+},
+"type": "PLOT_MISSION_EVENT",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_TILE" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_PARTY" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "LEVEL",
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "SHIP_WITH.hero",
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL",
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	},
+	{
+		"template": "CHOICE",
+		"promptScript": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-interested",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.429, "y": 0.409 },
+							"size": 0.6,
+							"drawDepth": -2,
+							"head": { "rotate": 2.841 },
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.143, "y": 0.475 },
+							"size": 0.6977,
+							"drawDepth": -2,
+							"head": { "rotate": 4.545, "scaleY": 1 },
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-skeptical",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.661, "y": 0.339 },
+							"size": 0.3883,
+							"drawDepth": -0.375,
+							"head": { "rotate": -18.009, "scaleY": -1 },
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.976, "y": 0.377 },
+							"size": 0.3883,
+							"drawDepth": -2.5,
+							"head": { "rotate": 2.026, "scaleY": 1 },
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"equipment": { "mode": "leaveEquipment" },
+							"focus": "foot",
+							"anchor": { "x": 0.554, "y": -0.011 },
+							"size": 0.0471,
+							"drawDepth": 5,
+							"head": { "rotate": 2.026, "scaleY": 1 },
+							"foot": { "rotate": 12.784 },
+							"color": { "r": "0.00053456", "g": "0.18443653", "b": "0.08238687", "a": "0.59826553" }
+						},
+						{
+							"role": "folk1",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.803, "y": 0.454 },
+							"size": 0.6568,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"head": { "rotate": -18.206 },
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_mountainsBlueRecolor.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.497, "y": 0.512 },
+							"size": 0.28,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:cookingPot.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.521, "y": 0.06 },
+							"size": 0.1473,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+							"textKey": "~01~prompt~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.25289786", "g": "0.59516734", "b": "0.82224596", "a": "1" },
+							"padXFraction": 0.04,
+							"widthFraction": 0.7780143,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+							"textKey": "~01~prompt~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.25289786", "g": "0.59516734", "b": "0.82224596", "a": "0.73121351" },
+							"padXFraction": 0.188,
+							"padYFraction": 0.245,
+							"widthFraction": 0.67350477,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+							"textKey": "~01~prompt~panel_001~3_hero",
+							"pointerOwner": "hero",
+							"location": "bottomLeft",
+							"padXFraction": 0.456,
+							"padYFraction": 0.124,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -8.530778,
+								"dX": -25.44822,
+								"dY": -0.9425287,
+								"scaleX": 0.6281197,
+								"scaleY": 0.6281197
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+							"textKey": "~01~prompt~panel_001~4_folk1",
+							"pointerOwner": "folk1",
+							"location": "bottomRight",
+							"padXFraction": 0.212,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 13.703218,
+								"dX": 45.241383,
+								"dY": -0.9425288,
+								"scaleX": 0.53005385,
+								"scaleY": 0.53005385,
+								"forcePointerImage": "speechMedium"
+							}
+						}
+					]
+				}
+			}
+		],
+		"options": [
+			{
+				"id": "one",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "asset:sites/images/walls_woodStone.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.307783, "y": 0.65 },
+									"size": 0.5665,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" },
+									"colorFilter": { "filterName": "unknownTerrain", "strength": 0.4 }
+								},
+								{
+									"assetSpec": "asset:sites/images/walls_woodStone.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 2.9296603, "y": 0.65 },
+									"size": 0.5665,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:foregroundBeamsRoof.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.46263915, "y": 0.664 },
+									"size": 0.4839,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"color": { "r": "0.82408351", "g": "0.7778846", "b": "0.42447072", "a": "1" },
+									"colorFilter": { "filterName": "hover", "strength": 0.6 }
+								},
+								{
+									"assetSpec": "scenery:bucketsRocks.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.08300471, "y": 0.082 },
+									"size": 0.374,
+									"drawDepth": 0,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:lightBeam1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.2131651, "y": 0.079 },
+									"size": 11.1019,
+									"drawDepth": -2,
+									"nameTag": "none",
+									"color": { "r": "0.99949884", "g": "0.97956669", "b": "0.82708931", "a": "0.08670485" }
+								},
+								{
+									"role": "hero",
+									"form": "frame-grim",
+									"facing": "left",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.81, "y": 0.534 },
+									"size": 0.5885,
+									"drawDepth": -1.5,
+									"head": { "rotate": -12.827, "scaleY": -1 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"role": "hero2",
+									"form": "frame-interested",
+									"equipment": {},
+									"anchor": { "x": 0.237, "y": 0.483 },
+									"size": 0.3656,
+									"drawDepth": 0.5,
+									"head": { "rotate": -6.019, "scaleY": 1 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"role": "hero3",
+									"form": "frame-grim",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.387, "y": 0.405 },
+									"size": 0.3146,
+									"drawDepth": 0.875,
+									"head": { "rotate": -15.341, "scaleY": 1 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_shake1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.848, "y": -1.069 },
+									"size": 0.116,
+									"drawDepth": 0.75,
+									"nameTag": "none",
+									"foot": { "rotate": -52.385 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~02~choice_one~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.25289786", "g": "0.59516734", "b": "0.82224596", "a": "0.73121351" },
+									"padXFraction": 0.05,
+									"padYFraction": 0.068,
+									"widthFraction": 0.77038205,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~02~choice_one~panel_001~2_darken",
+									"style": "darken",
+									"padXFraction": 0.623,
+									"padYFraction": 0.751,
+									"shrinkToFitText": true
+								}
+							]
+						}
+					}
+				]
+			},
+			{
+				"id": "two",
+				"script": [
+					{
+						"class": "comicNode_Panel",
+						"panel": {
+							"size": "half",
+							"showNameTags": false,
+							"actorSlots": [
+								{
+									"assetSpec": "asset:sites/images/walls_woodStone.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 3.252, "y": 0.732 },
+									"size": 0.8254,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" },
+									"colorFilter": { "filterName": "unknownTerrain", "strength": 0.4 }
+								},
+								{
+									"assetSpec": "asset:sites/images/walls_woodStone.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 4.158, "y": 0.732 },
+									"size": 0.8254,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:foregroundBeamsRoof.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.563, "y": 0.753 },
+									"size": 0.705,
+									"drawDepth": -1,
+									"nameTag": "none",
+									"color": { "r": "0.82408351", "g": "0.7778846", "b": "0.42447072", "a": "1" },
+									"colorFilter": { "filterName": "hover", "strength": 0.6 }
+								},
+								{
+									"assetSpec": "scenery:bucketsRocks.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.01, "y": -0.095 },
+									"size": 0.5449,
+									"drawDepth": 0,
+									"nameTag": "none",
+									"color": { "r": "0.9994989", "g": "0.97956675", "b": "0.82708925", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:lightBeam1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.2, "y": -0.1 },
+									"size": 16.1747,
+									"drawDepth": -2,
+									"nameTag": "none",
+									"color": { "r": "0.99949884", "g": "0.97956669", "b": "0.82708931", "a": "0.08670485" }
+								},
+								{
+									"role": "hero",
+									"form": "frame-angry",
+									"facing": "left",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.686, "y": 0.381 },
+									"size": 0.4951,
+									"drawDepth": 0.625,
+									"head": { "rotate": -13.186, "scaleY": 1 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"role": "hero2",
+									"form": "frame-angry",
+									"equipment": { "mode": "leaveEquipment" },
+									"anchor": { "x": 0.205, "y": 0.421 },
+									"size": 0.5327,
+									"drawDepth": 0.5,
+									"head": { "rotate": 6.001, "scaleY": 1 },
+									"foot": { "rotate": -5.473 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"role": "hero3",
+									"form": "frame-interested",
+									"facing": "left",
+									"equipment": { "mode": "removeWeapons" },
+									"anchor": { "x": 1.066, "y": 0.489 },
+									"size": 0.8244,
+									"drawDepth": -3,
+									"head": { "rotate": 16.195, "scaleY": 1 },
+									"foot": { "rotate": -9.074 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:light_spikyStarburst.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.46, "y": 0.157 },
+									"size": 0.3044,
+									"drawDepth": 0.75,
+									"nameTag": "none"
+								},
+								{
+									"assetSpec": "comic:smokeSwirls.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.206, "y": 0.096 },
+									"size": 0.516,
+									"drawDepth": 0.875,
+									"nameTag": "none",
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.50867051" }
+								},
+								{
+									"assetSpec": "comic:smokeSwirls.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.938, "y": 0.998 },
+									"size": 0.516,
+									"drawDepth": 0.875,
+									"nameTag": "none",
+									"foot": { "rotate": 71.198 },
+									"color": { "r": "1", "g": "1", "b": "1", "a": "0.50867051" }
+								},
+								{
+									"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge2.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.651, "y": 0.607 },
+									"size": 0.281,
+									"drawDepth": -0.5,
+									"nameTag": "none",
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"assetSpec": "asset:ui/scale/unpacked/particle_shardWoodLarge1.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.38, "y": 0.62 },
+									"size": 0.2193,
+									"drawDepth": -0.5,
+									"nameTag": "none",
+									"foot": { "rotate": -89.526 },
+									"color": { "r": "0.83260334", "g": "0.88948184", "b": "0.93618214", "a": "1" }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcLong.png",
+									"role": null,
+									"focus": "foot",
+									"anchor": { "x": 0.565, "y": 0.478 },
+									"size": 0.0827,
+									"drawDepth": -0.75,
+									"nameTag": "none",
+									"foot": { "rotate": 45.305 }
+								},
+								{
+									"assetSpec": "comic:actionLines_arcShort.png",
+									"role": null,
+									"facing": "left",
+									"focus": "foot",
+									"anchor": { "x": 0.444, "y": 0.509 },
+									"size": 0.0827,
+									"drawDepth": -0.75,
+									"nameTag": "none",
+									"foot": { "rotate": 45.305 }
+								}
+							],
+							"textSlots": [
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~03~choice_two~panel_001~1_narration",
+									"style": "narration",
+									"backgroundColor": { "r": "0.25289786", "g": "0.59516734", "b": "0.82224596", "a": "0.73121351" },
+									"location": "topRight",
+									"padXFraction": 0.038,
+									"padYFraction": 0.068,
+									"widthFraction": 0.8318239,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~03~choice_two~panel_001~2_darken",
+									"style": "darken",
+									"padXFraction": 0.726,
+									"padYFraction": 0.778,
+									"shrinkToFitText": true
+								},
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~03~choice_two~panel_001~3_action",
+									"style": "action",
+									"padXFraction": 0.349,
+									"padYFraction": 0.685,
+									"shrinkToFitText": true,
+									"allowOverlap": true,
+									"allowDrawOverEdges": true
+								},
+								{
+									"textSourceFile": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+									"textKey": "~03~choice_two~panel_001~4_action",
+									"style": "action",
+									"padXFraction": 0.386,
+									"padYFraction": 0.81,
+									"shrinkToFitText": true,
+									"allowOverlap": true,
+									"allowDrawOverEdges": true
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
+],
+"outcomes": [
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "one",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "FORTITUDE" }
+					],
+					"missionPlanOverride": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+					"victoryEventIds": [ "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone_victory" ]
+				}
+			]
+		}
+	},
+	{
+		"class": "IfPlayerChose",
+		"target": "self",
+		"ifPlayerChose": "two",
+		"then": {
+			"class": "DoAll",
+			"outcomes": [
+				{
+					"class": "Mission",
+					"goal": "liberate",
+					"combatants": [
+						{ "role": "party", "side": "player" },
+						{ "role": "foes", "side": "enemy" }
+					],
+					"combatModifiers": [
+						{ "modifier": "HASTE" }
+					],
+					"missionPlanOverride": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+					"victoryEventIds": [ "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone_victory" ]
+				}
+			]
+		}
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "ancientCartographerMystic_generic",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "middleAge",
+					"setEquipment": "tierTwo",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk1",
+			"npcId": "genericPlots_theLibraryLibrarian",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "veryOldAge",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk2",
+			"npcId": "genericPlots_theLibraryUnwashedLibrarian",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hero2",
+					"setGender": "relativeIsAttracted",
+					"setClass": "farmer",
+					"setAge": "closeTo",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk3",
+			"npcId": "genericPlots_theLibraryUnwashedLibrarian2",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hero",
+					"setGender": "relativeIsAttracted",
+					"setClass": "farmer",
+					"setAge": "closeTo",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
