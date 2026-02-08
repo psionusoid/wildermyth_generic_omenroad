@@ -19,6 +19,7 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
+	"encounterWeight": "DLC_INSTALLED_OMENROAD",
 	"encounterEnabled": true,
 	"musicOverride": "Music/Comics - Everyday Moments"
 },

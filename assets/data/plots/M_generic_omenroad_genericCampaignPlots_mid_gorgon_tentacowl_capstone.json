@@ -1,0 +1,253 @@
+{
+"objectives": [
+	{
+		"class": "Objective_ActionsEachTurn",
+		"objectiveId": "Objective_ActionsEachTurn.M_dungeonBoss_gorgon1",
+		"actions": [
+			{
+				"class": "StepM_SpawnExact",
+				"location": {
+					"class": "TileSpec.ExactTiles",
+					"offsetX": 43,
+					"offsetY": 11,
+					"xs": [ 35, 35, 36, 37, 37, 37, 36, 36, 35, 38, 39, 38 ],
+					"ys": [ 10, 9, 9, 9, 10, 11, 11, 10, 11, 11, 11, 10 ]
+				},
+				"randomCards": { "numberOfCards": "2" }
+			},
+			{
+				"class": "StepM_UpdateAI",
+				"setDisposition": "searchAndDestroy",
+				"setAlarmCoordinate": {
+					"class": "TileSpec.ExactTiles",
+					"offsetX": 43,
+					"offsetY": 11,
+					"xs": [ 28 ],
+					"ys": [ 28 ]
+				}
+			}
+		],
+		"everyNTurns": 2,
+		"skipFirstNTurns": "0",
+		"atStartOfMonsterTurn": false
+	},
+	{
+		"class": "Objective_KillSpecificEnemies",
+		"objectiveId": "Objective_KillSpecificEnemies.M_dungeonBoss_gorgon4_killBoss",
+		"feedback": [
+			{ "mission": "TUTORIAL_GOAL_UNIT", "role": "target" }
+		],
+		"onSuccess": [
+			{ "class": "Step_SetPlotResult", "resultPriority": 10 }
+		],
+		"byRole": [ "monster" ]
+	},
+	{
+		"class": "Objective_SomeHeroesMustSurvive",
+		"objectiveId": "Objective_SomeHeroesMustSurvive.M_dungeonBoss_gorgon1_killBoss",
+		"onFail": [
+			{ "class": "Step_SetPlotResult", "result": "defeat", "resultPriority": 100 }
+		]
+	},
+	{
+		"class": "Objective_OpenDoor",
+		"objectiveId": "Objective_OpenDoor.M_dungeonBoss_gorgon4",
+		"visible": false,
+		"onSuccess": [
+			{
+				"class": "StepM_SpawnExact",
+				"location": {
+					"class": "TileSpec.ExactTiles",
+					"offsetX": 43,
+					"offsetY": 11,
+					"xs": [ 27, 28 ],
+					"ys": [ 34, 34 ]
+				},
+				"monsterIds": [ "gorgon_tentacowl" ],
+				"rememberAs": "monster"
+			},
+			{
+				"class": "Step_ChapterSwitchImmediate",
+				"chOne": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 42,
+							"offsetY": 11,
+							"xs": [ 29, 30, 24, 23 ],
+							"ys": [ 31, 31, 31, 31 ]
+						},
+						"monsterIds": [ "gorgon_bartoth", "gorgon_gheist", "gorgon_roe" ]
+					}
+				],
+				"chTwo": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 43,
+							"offsetY": 11,
+							"xs": [ 31, 30, 31, 30, 26, 25, 25, 26, 32, 32, 33, 33, 24, 23, 22, 22, 23, 24, 24, 25, 26 ],
+							"ys": [ 31, 31, 30, 30, 31, 30, 31, 30, 31, 30, 30, 31, 31, 31, 31, 30, 30, 30, 29, 29, 29 ]
+						},
+						"monsterIds": [ "gorgon_bartoth", "gorgon_usric", "gorgon_roe", "gorgon_gheist" ]
+					}
+				],
+				"chThree": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 43,
+							"offsetY": 11,
+							"xs": [ 31, 31, 30, 30, 25, 25, 26, 26, 24, 23, 22, 22, 33, 33, 32, 32 ],
+							"ys": [ 31, 30, 30, 31, 31, 30, 30, 31, 31, 31, 31, 30, 31, 30, 30, 31 ]
+						},
+						"monsterIds": [
+							"gorgon_bartoth",
+							"gorgon_roe",
+							"gorgon_usric",
+							"gorgon_gheist",
+							"gorgon_gheist"
+						]
+					}
+				],
+				"chFour": null,
+				"chFive": null
+			},
+			{
+				"class": "Step_AddObjectives",
+				"objectives": [ "Objective_ActionsEachTurn.M_dungeonBoss_gorgon1" ]
+			},
+			{
+				"class": "Step_RunOutcomes",
+				"outcomes": [
+					{
+						"class": "SetAudioParameter",
+						"audioPath": "Music/Gorgons",
+						"parameterName": "stage",
+						"value": "1"
+					}
+				]
+			}
+		],
+		"plotDoors": [ "door" ]
+	}
+],
+"steps": [
+	{
+		"class": "StepM_SetupMission",
+		"missionResults": [
+			{
+				"defaultGear": false,
+				"experiencePoints": "20+(CHAPTER*20)",
+				"customResults": [
+					{ "class": "Step_UnlockLegacyAspect", "aspect": "dungeonBossDefeated|tentacowl" },
+					{
+						"class": "Step_GetGear",
+						"query": {
+							"itemIdByExpression": [
+								{ "expression": "CHAPTER", "threshold": "2", "itemId": "staffTentacowl_t3" },
+								{ "itemId": "staffTentacowl_t2" }
+							]
+						}
+					}
+				]
+			}
+		]
+	},
+	{
+		"class": "StepM_SpawnExact",
+		"side": "HERO",
+		"useMapSpawnRegions": true,
+		"combatantCards": true
+	},
+	{
+		"class": "StepM_SpawnExact",
+		"useMapSpawnRegions": true,
+		"randomCards": { "group": "gorgon", "numberOfCards": "5+(CHAPTER*2)" }
+	},
+	{
+		"class": "Step_AddObjectives",
+		"objectives": [
+			"Objective_KillSpecificEnemies.M_dungeonBoss_gorgon4_killBoss",
+			"Objective_SomeHeroesMustSurvive.M_dungeonBoss_gorgon1_killBoss",
+			"Objective_OpenDoor.M_dungeonBoss_gorgon4"
+		]
+	},
+	{
+		"class": "StepM_Trap",
+		"location": {
+			"class": "TileSpec.ExactTiles",
+			"offsetX": 43,
+			"offsetY": 11,
+			"xs": [ 33, 33, 21, 21, 21, 33, 33, 33, 33, 34, 34, 34, 34, 34, 34, 33, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 22, 21, 20, 20, 20, 20, 20, 20, 20, 21 ],
+			"ys": [ 31, 30, 29, 28, 27, 29, 28, 27, 26, 31, 32, 33, 34, 35, 36, 36, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 37, 36, 36, 36, 35, 34, 33, 32, 31, 30, 30 ]
+		},
+		"howMany": "onePerTile",
+		"regionAspectValue": "999",
+		"makeAllyOf": "foes"
+	},
+	{
+		"class": "Step_SubPlot",
+		"STUB": "The base dungon plot, which includes spawning spirits, waiting for rewards, and spawning enemies at hero spawn",
+		"plotId": "M_dungeonMap_base",
+		"copyIn": [
+			{ "from": "company" }
+		]
+	},
+	{
+		"class": "Step_WaitForObjectives",
+		"objectives": [ "Objective_OpenDoor.M_dungeonBoss_gorgon4" ]
+	},
+	{
+		"class": "Step_IfCompanyHasAspect",
+		"then": [
+			{
+				"class": "Step_ChapterSwitchImmediate",
+				"chOne": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 43,
+							"offsetY": 11,
+							"xs": [ 29, 29, 28, 27, 26, 27, 28, 26 ],
+							"ys": [ 31, 30, 30, 30, 30, 31, 31, 31 ]
+						},
+						"monsterIds": [ "gorgon_gheist" ]
+					}
+				],
+				"chTwo": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 43,
+							"offsetY": 11,
+							"xs": [ 29, 29, 28, 27, 26, 27, 28, 26 ],
+							"ys": [ 31, 30, 30, 30, 30, 31, 31, 31 ]
+						},
+						"monsterIds": [ "gorgon_usric" ]
+					}
+				],
+				"chThree": [
+					{
+						"class": "StepM_SpawnExact",
+						"location": {
+							"class": "TileSpec.ExactTiles",
+							"offsetX": 43,
+							"offsetY": 11,
+							"xs": [ 29, 29, 28, 27, 26, 27, 28, 26 ],
+							"ys": [ 31, 30, 30, 30, 30, 31, 31, 31 ]
+						},
+						"monsterIds": [ "gorgon_staggron" ]
+					}
+				]
+			}
+		],
+		"aspect": "dungeonModeBossesGetAdditionalMonster"
+	}
+]
+}
