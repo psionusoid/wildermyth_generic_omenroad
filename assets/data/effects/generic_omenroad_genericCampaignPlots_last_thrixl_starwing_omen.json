@@ -1,0 +1,1155 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+	"modId": "Campaign Omenroad Bosses",
+	"author": "Draconiya",
+	"genericCampaignInfo": {
+		"chapter": "mid",
+		"threatFlavor": "gorgon",
+		"plotId": "C_generic_keystone",
+		"capstoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
+		"keystoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone"
+	}
+},
+"type": "PLOT_OMEN",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"encounterWeight": "DLC_INSTALLED_OMENROAD",
+	"encounterEnabled": true,
+	"musicOverride": "Music/Comics - High Magic Encounters"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "role": "town", "template": "INJECTED_SITE", "injectedRole": "town" },
+	{ "template": "INJECTED_THREAT" },
+	{
+		"role": "hook",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL*10",
+		"aspects": [ "alive", "hook_Dreamer" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hook2",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL*3",
+		"aspects": [ "hook_Dreamer", "alive" ],
+		"notAlreadyMatchedAs": [ "hook", "hook2", "loner", "hero" ]
+	},
+	{
+		"role": "loner",
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "((theme_star*10000)+(hook_Wildheart*100))+LONER",
+		"notAlreadyMatchedAs": [ "hook", "hook2" ]
+	},
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(LEVEL*10)+POET",
+		"notAlreadyMatchedAs": [ "hook", "hook2", "loner" ]
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hook", "hook2", "loner", "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"notAlreadyMatchedAs": [ "hook", "hook2", "loner", "hero", "hero2" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"showNameTags": false,
+					"bg": "comicBG_abstractGray1.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "asset:ui/comics/figure_monsterShadows2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.358, "y": 0.745 },
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.059,
+							"padYFraction": 0.028,
+							"widthFraction": 0.9302809,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fourth",
+					"actorSlots": [
+						{
+							"assetSpec": "asset:ui/comics/figure_monsterShadows2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.274, "y": 0.874 },
+							"size": 0.96,
+							"nameTag": "none"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.191,
+							"padYFraction": 0.231,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "fifth",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.482, "y": 0.83 },
+							"drawDepth": 3,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0.17919075", "b": "0.08286273", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.464, "y": 0.83 },
+							"size": 0.215,
+							"drawDepth": 4,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "0.58670521" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_abstractGray1.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.545, "y": 0.802 },
+							"size": 0.8675774,
+							"drawDepth": 5,
+							"nameTag": "none",
+							"foot": { "rotate": 179.706 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.249,
+							"padYFraction": 0.409,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_abstractGray1.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.531, "y": 0.563 },
+							"size": 0.4248,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"foot": { "rotate": 179.706 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.499, "y": 0.813 },
+							"size": 0.053,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"foot": { "rotate": -65.856 },
+							"color": { "r": "0", "g": "0.23014487", "b": "0.71098268", "a": "1" },
+							"animationStartTime": "0",
+							"animationSpeed": 1
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.511, "y": 0.796 },
+							"size": 0.1539,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "0.58670521" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.065,
+							"padYFraction": 0.246,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_abstractGray1.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.598, "y": 0.764 },
+							"size": 0.4614,
+							"nameTag": "none",
+							"foot": { "rotate": 179.706 }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.504, "y": 0.876 },
+							"size": 0.1135,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 94.009 },
+							"color": { "r": "0", "g": "0.17919075", "b": "0.08286273", "a": "1" },
+							"animationStartTime": "0",
+							"animationSpeed": 1
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.777 },
+							"size": 0.2246,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.91907519", "g": "0.99999994", "b": "0.95649701", "a": "0.47398844" }
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.515, "y": 0.777 },
+							"size": 0.3423,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "0.58670521" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_005~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.021,
+							"padYFraction": 0.243,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_abstractGray1.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.59, "y": 0.449 },
+							"size": 0.3356,
+							"nameTag": "none",
+							"foot": { "rotate": 179.706 }
+						},
+						{
+							"assetSpec": "comic:candle.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.582, "y": -0.167 },
+							"size": 4.8081,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 6.855 },
+							"color": { "r": "0.18497109", "g": "0.29332769", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "vfx:fire",
+							"role": null,
+							"form": "idle",
+							"facing": "left",
+							"focus": "middle",
+							"anchor": { "x": 0.558, "y": 0.715 },
+							"size": 0.1371,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"foot": { "rotate": -65.856 },
+							"color": { "r": "0", "g": "0.17919075", "b": "0.08286273", "a": "1" },
+							"animationStartTime": "0",
+							"animationSpeed": 1
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.564, "y": 0.635 },
+							"size": 0.2246,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.83237004", "g": "0.99418616", "b": "0.99999988", "a": "0.59248555" }
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.557, "y": 0.658 },
+							"size": 0.3423,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "0.37572256" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_006~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.145,
+							"padYFraction": 0.432,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_nightStars.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.752, "y": 0.123 },
+							"size": 0.5514,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.512, "y": 0.547 },
+							"size": 0.2246,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.04118079", "g": "0.05547436", "b": "0.12644927", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.505, "y": 0.539 },
+							"size": 0.3423,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "0.45375723" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.166,
+							"padYFraction": 0.81,
+							"shrinkToFitText": true,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "figure:thrixl/thrixl_starWing.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.747, "y": 0.05 },
+							"size": 0.3901,
+							"drawDepth": 1,
+							"nameTag": "none",
+							"color": { "r": "0", "g": "0", "b": "0", "a": "0.29479769" }
+						},
+						{
+							"assetSpec": "comic:starsLong.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.518, "y": 0.717 },
+							"size": 0.4181,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "0.9720338", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.264, "y": 0.701 },
+							"nameTag": "none",
+							"color": { "r": "0.19880384", "g": "0.26780728", "b": "0.61044472", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:action_pointerSquiggly2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.878, "y": 0.358 },
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.04118079", "g": "0.05547436", "b": "0.12644927", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:starConstellation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.343, "y": 0.567 },
+							"size": 0.3767,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.75722539", "g": "1", "b": "0.86949104", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:comicEyes_teal.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.897, "y": 0.534 },
+							"size": 0.2622,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"foot": { "rotate": 22.377 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.51445085" }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.876, "y": 0.553 },
+							"size": 0.4481,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.81502891" }
+						},
+						{
+							"assetSpec": "comic:sparkleSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.923, "y": 0.487 },
+							"size": 0.3263,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.81502891" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.013,
+							"padYFraction": 0.038,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_008~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.269,
+							"padYFraction": 0.453,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_008~3_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.712,
+							"padYFraction": 0.856,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_interiorNight.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:starConstellation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.188, "y": 0.509 },
+							"size": 0.3767,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:bed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.004, "y": 0.126 },
+							"size": 0.3478,
+							"nameTag": "none",
+							"color": { "r": "0.51833498", "g": "0.58501858", "b": "0.7360003", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallArt_landscape.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.033, "y": 0.657 },
+							"size": 0.13,
+							"nameTag": "none",
+							"foot": { "rotate": -0.528 },
+							"color": { "r": "0.41378754", "g": "0.49494508", "b": "0.678698", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.364, "y": 0.6 },
+							"size": 0.1954,
+							"nameTag": "none",
+							"color": { "r": "0.59301174", "g": "0.64935678", "b": "0.77693045", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"equipment": {},
+							"anchor": { "x": -0.356, "y": 0.377 },
+							"size": 0.2446
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_009~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.043,
+							"padYFraction": 0.067,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_nightStars.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:starConstellation.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.125, "y": 0.559 },
+							"size": 0.3767,
+							"nameTag": "none",
+							"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:thrixlWorld_nightFlowerCloud.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.301, "y": 0.412 },
+							"size": 0.136,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "0.650289" }
+						},
+						{
+							"assetSpec": "comic:nightAltarCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.782, "y": 0.176 },
+							"size": 0.3076,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.22920913", "g": "0.2871049", "b": "0.4181897", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_010~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.06,
+							"padYFraction": 0.075,
+							"widthFraction": 0.9216227,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+							"textKey": "~01~~panel_010~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+							"padXFraction": 0.454,
+							"padYFraction": 0.834,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Split",
+				"splitSpec": "hook.exists",
+				"splitBranches": [
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"showNameTags": false,
+								"bg": "comicBG_forestField2_blue.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-interested",
+										"equipment": { "mode": "removeWeapons" },
+										"focus": "foot",
+										"anchor": { "x": 0.537, "y": 0.219 },
+										"size": 0.1711,
+										"head": { "rotate": 29.402 },
+										"color": { "r": "0.94797683", "g": "1", "b": "0.9720338", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.525, "y": 0.199 },
+										"size": 0.2002,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0.75722539", "g": "0.94948041", "b": "1", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:smokeCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.518, "y": 0.164 },
+										"size": 0.3841,
+										"nameTag": "none",
+										"color": { "r": "0.75722539", "g": "0.94948041", "b": "1", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_011.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": 0.023,
+										"padYFraction": 0.055,
+										"widthFraction": 0.96218985,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "half",
+								"bg": "comicBG_treesPurple.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-happy",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.653, "y": 0.5 },
+										"size": 0.8961039,
+										"nameTag": "bottomRight",
+										"head": { "rotate": -11.265, "scaleY": -1 },
+										"color": { "r": "0.94797683", "g": "1", "b": "0.9720338", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_forestField2_blue.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.475, "y": 0.379 },
+										"size": 1.2826,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_012.(hook_exists)~1_hook",
+										"pointerOwner": "hook",
+										"padXFraction": 0.049,
+										"padYFraction": 0.058,
+										"shrinkToFitText": true,
+										"pointerAdjust": { "dX": -7.5402303, "dY": -3.7701151, "pointerOrientH": "onLeft" }
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"showNameTags": false,
+								"bg": "comicBG_abstractTeal.jpg",
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-surprised",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.482, "y": 0.409 },
+										"size": 1.4142135,
+										"head": { "rotate": -51.94, "scaleY": -1 },
+										"color": { "r": "0.82080925", "g": "1", "b": "0.90367198", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_013.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": 0.043,
+										"padYFraction": 0.058,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"actorSlots": [
+									{
+										"role": "hook",
+										"form": "frame-scared",
+										"facing": "left",
+										"equipment": { "mode": "removeWeapons" },
+										"anchor": { "x": 0.466, "y": 0.584 },
+										"size": 0.10223776,
+										"drawDepth": 1,
+										"head": { "rotate": 56.141 },
+										"foot": { "rotate": 66.691 }
+									},
+									{
+										"assetSpec": "comic:nightAltarCloud.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.534, "y": 0.293 },
+										"size": 0.278,
+										"nameTag": "none",
+										"foot": { "rotate": 175.957 },
+										"color": { "r": "0", "g": "0.84393066", "b": "0.66831475", "a": "0.5433526" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_014.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": 0.098,
+										"padYFraction": 0.084,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_nightStars.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:comet.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.322, "y": 0.547 },
+										"size": 0.2277,
+										"nameTag": "none",
+										"foot": { "rotate": -29.209 },
+										"color": { "r": "0.42196536", "g": "1", "b": "0.87971526", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_nightStars.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 2.224, "y": 0.27 },
+										"size": 0.4446,
+										"nameTag": "none"
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_015.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": 0.034,
+										"padYFraction": 0.071,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_nightStars.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "figure:thrixl/thrixl_starWing.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.269, "y": 1.318 },
+										"size": 0.3782,
+										"nameTag": "none",
+										"foot": { "rotate": -16.05 },
+										"color": { "r": "0.04118079", "g": "0.05547436", "b": "0.12644927", "a": "1" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_nightStars.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 1.144, "y": 0.283 },
+										"size": 0.4446,
+										"nameTag": "none",
+										"foot": { "rotate": 0 }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_flyer.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.769, "y": 0.201 },
+										"size": 0.1214,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -63.766 },
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_flyer.png",
+										"role": null,
+										"facing": "left",
+										"focus": "foot",
+										"anchor": { "x": 0.178, "y": 0.82 },
+										"size": 0.0625,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -10.561 },
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_nightmare.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.192, "y": 0.183 },
+										"size": 0.1514,
+										"drawDepth": 1.75,
+										"nameTag": "none",
+										"foot": { "rotate": 151.077 },
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_drathix.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.563, "y": 0.453 },
+										"size": 0.1583,
+										"drawDepth": 1.875,
+										"nameTag": "none",
+										"foot": { "rotate": -58.473 },
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_016.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": -0.66,
+										"padYFraction": 0.294,
+										"widthFraction": 1.2591702,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"bg": "comicBG_nightStars.jpg",
+								"actorSlots": [
+									{
+										"assetSpec": "comic:thrixlSwirlyWebs2.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.616, "y": 0.479 },
+										"size": 0.3408,
+										"drawDepth": 1.75,
+										"nameTag": "none",
+										"foot": { "rotate": -175.615 },
+										"color": { "r": "0.64161849", "g": "1", "b": "0.92542338", "a": "0.55202311" }
+									},
+									{
+										"assetSpec": "comicBg:comicBG_nightStars.jpg",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.105, "y": 0.264 },
+										"size": 0.4446,
+										"nameTag": "none"
+									},
+									{
+										"assetSpec": "figure:thrixl/thrixl_starWing.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.297, "y": 1.315 },
+										"size": 0.3782,
+										"drawDepth": 1.5,
+										"nameTag": "none",
+										"foot": { "rotate": -16.05 },
+										"color": { "r": "0.04118079", "g": "0.05547436", "b": "0.12644927", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:thrixlSwirlyWebs1.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.758, "y": 0.166 },
+										"size": 0.4155,
+										"drawDepth": 1.875,
+										"nameTag": "none",
+										"foot": { "rotate": -40.256 },
+										"color": { "r": "0.64161849", "g": "1", "b": "0.92542338", "a": "0.41329479" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_017.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.87456071", "g": "0.53734559", "b": "0.90195936", "a": "1" },
+										"padXFraction": -1.37,
+										"padYFraction": 0.505,
+										"widthFraction": 2.417318,
+										"shrinkToFitText": true,
+										"allowDrawOverEdges": true
+									}
+								]
+							}
+						},
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_rocksNight.jpg",
+								"actorSlots": [
+									{
+										"role": "loner",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.634, "y": 0.084 },
+										"size": 0.2178,
+										"head": { "rotate": 41.526 },
+										"color": { "r": "0.49219823", "g": "0.56250024", "b": "0.72167456", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockForStanding.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.146, "y": 0.147 },
+										"size": 0.3077,
+										"nameTag": "none",
+										"color": { "r": "0.28651142", "g": "0.35888115", "b": "0.52273715", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggyLarge.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.84, "y": 0.22 },
+										"size": 0.1451,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.226 },
+										"size": 0.516,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "0", "g": "0.17919075", "b": "0.08286273", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_018.(hook_exists)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+										"padXFraction": 0.019,
+										"padYFraction": 0.054,
+										"widthFraction": 0.7080527,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					],
+					[
+						{
+							"class": "comicNode_Panel",
+							"panel": {
+								"size": "twoThirds",
+								"showNameTags": false,
+								"bg": "comicBG_rocksNight.jpg",
+								"actorSlots": [
+									{
+										"role": "loner",
+										"form": "frame-interested",
+										"equipment": {},
+										"focus": "foot",
+										"anchor": { "x": 0.634, "y": 0.084 },
+										"size": 0.2178,
+										"head": { "rotate": 41.526 },
+										"color": { "r": "0.49219823", "g": "0.56250024", "b": "0.72167456", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:rockForStanding.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.146, "y": 0.147 },
+										"size": 0.3077,
+										"nameTag": "none",
+										"color": { "r": "0.28651142", "g": "0.35888115", "b": "0.52273715", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggyLarge.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": 0.84, "y": 0.22 },
+										"size": 0.1451,
+										"drawDepth": 0,
+										"nameTag": "none",
+										"color": { "r": "0", "g": "0", "b": "0", "a": "1" }
+									},
+									{
+										"assetSpec": "comic:comicForeground_rockJaggySmall.png",
+										"role": null,
+										"focus": "foot",
+										"anchor": { "x": -0.149, "y": 0.226 },
+										"size": 0.516,
+										"drawDepth": -1,
+										"nameTag": "none",
+										"color": { "r": "0", "g": "0.17919075", "b": "0.08286273", "a": "1" }
+									}
+								],
+								"textSlots": [
+									{
+										"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
+										"textKey": "~01~~panel_019.(hook_is_missing)~1_narration",
+										"style": "narration",
+										"backgroundColor": { "r": "0.53734565", "g": "0.57949835", "b": "0.9019593", "a": "1" },
+										"padXFraction": 0.019,
+										"padYFraction": 0.054,
+										"widthFraction": 0.7080527,
+										"shrinkToFitText": true
+									}
+								]
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hero",
+					"setGender": "relativeIsAttracted",
+					"setAge": "closeTo",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
