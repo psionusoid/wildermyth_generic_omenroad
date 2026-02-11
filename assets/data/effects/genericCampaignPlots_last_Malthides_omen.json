@@ -1,0 +1,968 @@
+{
+"id": "genericCampaignPlots_last_Malthides_omen",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "genericCampaignPlots_last_Malthides_omen",
+	"modId": "campaign_omenroad_bosses_local",
+	"author": "Draconiya"
+},
+"type": "PLOT_OMEN",
+"verb": "MANEUVER",
+"ability": {
+	"icon": "melee",
+	"priority": "1",
+	"cooldown": "oncePerGame",
+	"musicOverride": "Music/Campaign"
+},
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "role": "town", "template": "INJECTED_SITE", "injectedRole": "town" },
+	{
+		"role": "site3",
+		"template": "INJECTED_ENTITY",
+		"type": "ANY_STATUS",
+		"injectedRole": "site3"
+	},
+	{ "template": "INJECTED_THREAT", "choose": "ANY" },
+	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "HERO_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"aspects": null,
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"bg": "comicBG_fieldGolden.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldGolden.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.754, "y": 0.503 },
+							"size": 0.2954,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallLight.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.769, "y": 0.032 },
+							"size": 0.1195,
+							"drawDepth": 0,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:bush5a.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.454, "y": 0.044 },
+							"size": 0.1486,
+							"drawDepth": -1,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.055, "y": 0.528 },
+							"size": 0.0698,
+							"drawDepth": 0.5,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_calf1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.524, "y": 0.101 },
+							"size": 0.1231,
+							"drawDepth": 0.75,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowShaggyGolden.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.349, "y": 0.122 },
+							"size": 0.1576,
+							"drawDepth": 0.875,
+							"nameTag": "none",
+							"foot": { "rotate": 4.559 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowShaggyBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.093, "y": 0.129 },
+							"size": 0.2006,
+							"drawDepth": 0.9375,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.062, "y": 0.412 },
+							"size": 0.0624,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:birdHawkSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.734, "y": 0.73 },
+							"size": 0.0824,
+							"drawDepth": 0.96875,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_goat.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.169, "y": 0.469 },
+							"size": 0.0541,
+							"drawDepth": 0.984375,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "figure:misc/animal_catStalk.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.761, "y": 0.131 },
+							"size": 0.0454,
+							"drawDepth": -3,
+							"nameTag": "none",
+							"foot": { "rotate": -3.713 }
+						},
+						{
+							"assetSpec": "comic:smokeSharp1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.263, "y": 0.359 },
+							"size": 0.16712338,
+							"drawDepth": 0.125,
+							"nameTag": "none",
+							"color": { "r": "0.7854923", "g": "0.8520081", "b": "0.86768687", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.317, "y": 0.462 },
+							"size": 0.33406752,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"color": { "r": "0.73410404", "g": "0.94927996", "b": "1", "a": "0.36994219" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.203, "y": 1.031 },
+							"size": 0.306826,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 21.63 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"padXFraction": 0.014,
+							"padYFraction": 0.035,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_fieldGolden.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldGolden.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.565, "y": 0.5 },
+							"size": 0.32964927,
+							"nameTag": "none",
+							"color": { "r": "0.89174378", "g": "0.9191497", "b": "0.93484581", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.902, "y": 1.022 },
+							"size": 0.3424,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -140.28 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.388, "y": 1.025 },
+							"size": 0.3424,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 21.63 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						},
+						{
+							"assetSpec": "comic:comicForeground_stoneWallDark.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.38, "y": 0.059 },
+							"size": 0.1495,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.79070467", "g": "0.8804431", "b": "0.93183869", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeBlown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.455, "y": 0.503 },
+							"size": 0.3728,
+							"drawDepth": 0.25,
+							"nameTag": "none",
+							"color": { "r": "0.73410404", "g": "0.94927996", "b": "1", "a": "0.36994219" }
+						},
+						{
+							"assetSpec": "comic:smokeSharp1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.555, "y": 0.368 },
+							"size": 0.1865,
+							"drawDepth": 0.125,
+							"nameTag": "none",
+							"color": { "r": "0.7854923", "g": "0.8520081", "b": "0.86768687", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:nightAltarCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.537, "y": 1.003 },
+							"size": 0.235,
+							"drawDepth": 0.75,
+							"nameTag": "none",
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.19942197" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"padXFraction": -0.84,
+							"padYFraction": 0.395,
+							"widthFraction": 1.108238,
+							"allowDrawOverEdges": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-grim",
+							"equipment": {
+								"mode": "removeWeapons",
+								"equipItemsById": [ "augment_cloakCave" ]
+							},
+							"anchor": { "x": 0.333, "y": 0.45 },
+							"size": 0.8793623,
+							"overrideNameTag": "~01~~panel_003~nameTag_0",
+							"head": { "rotate": -23.581 },
+							"color": { "r": "0.38482744", "g": "0.3946774", "b": "0.59783155", "a": "1" },
+							"overrideNameTagTextSource": "genericCampaignPlots_last_Malthides_omen"
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_003~1_narration",
+							"style": "narration",
+							"padXFraction": 0.09,
+							"padYFraction": 0.054,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_townNightLights.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:distantFigure_wanderer3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.108, "y": 0.111 },
+							"size": 0.61,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.793, "y": 0.132 },
+							"size": 0.5063,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.926, "y": 0.157 },
+							"size": 0.7181,
+							"nameTag": "none",
+							"foot": { "rotate": -12.289 },
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.355, "y": 0.163 },
+							"size": 0.7466,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_004~1_narration",
+							"style": "narration",
+							"padXFraction": 0.026,
+							"padYFraction": 0.051,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"form": "frame-talk",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.707, "y": -0.521 },
+							"size": 0.5703819,
+							"nameTag": "bottomRight",
+							"color": { "r": "0.57096791", "g": "0.57803673", "b": "0.72382975", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-interested",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.178, "y": -0.544 },
+							"size": 0.5703819,
+							"color": { "r": "0.57096791", "g": "0.57803673", "b": "0.72382975", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_005~1_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"padXFraction": 0.205,
+							"padYFraction": 0.112,
+							"widthFraction": 0.66567165,
+							"pointerAdjust": {
+								"dX": -15.080461,
+								"dY": 35.816093,
+								"pointerOrientH": "onLeft",
+								"forcePointerImage": "thoughtMedium"
+							}
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_005~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.153,
+							"padYFraction": 0.118,
+							"widthFraction": 0.69432837
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_stoneWallDark.jpg",
+					"actorSlots": [
+						{
+							"role": "hero2",
+							"equipment": {},
+							"anchor": { "x": 0.21, "y": 0.434 },
+							"size": 0.5703819,
+							"head": { "rotate": 13.054 },
+							"color": { "r": "0.57096791", "g": "0.57803673", "b": "0.72382975", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.707, "y": -0.521 },
+							"size": 0.5703819,
+							"head": { "rotate": -23.652, "scaleY": -1 },
+							"color": { "r": "0.57096791", "g": "0.57803673", "b": "0.72382975", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_006~1_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.064,
+							"padYFraction": 0.115,
+							"widthFraction": 0.5964179
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_006~2_hero",
+							"style": "thought",
+							"pointerOwner": "hero",
+							"padXFraction": 0.05,
+							"padYFraction": 0.122,
+							"widthFraction": 0.5683582,
+							"shrinkToFitText": true,
+							"pointerAdjust": { "dX": -0.9425297, "dY": 35.816093, "forcePointerImage": "thoughtMedium" }
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"bg": "comicBG_townNightLights.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:distantFigure_wanderer3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.688, "y": 0.127 },
+							"size": 0.61,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.478, "y": 0.129 },
+							"size": 0.5063,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer3.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.018, "y": 0.173 },
+							"size": 0.7181,
+							"nameTag": "none",
+							"foot": { "rotate": -12.289 },
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						},
+						{
+							"assetSpec": "comic:distantFigure_wanderer1.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.355, "y": 0.163 },
+							"size": 0.7466,
+							"nameTag": "none",
+							"color": { "r": "0.18562263", "g": "0.19037379", "b": "0.28836581", "a": "0.67341042" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_007~1_narration",
+							"style": "narration",
+							"padXFraction": 0.167,
+							"padYFraction": 0.157,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_fieldBrown.jpg",
+					"mustStartRow": true,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.535, "y": 0.497 },
+							"size": 0.3072,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "comic:fieldBurned.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.549, "y": 0.132 },
+							"size": 0.1424,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:cropsGorgon.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.392, "y": 0.239 },
+							"size": 0.1728,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"foot": { "rotate": -9.968 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.4 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_008~1_narration",
+							"style": "narration",
+							"padXFraction": 0.18,
+							"padYFraction": 0.061,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_fieldBrown.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-scared",
+							"facing": "left",
+							"equipment": {},
+							"anchor": { "x": 0.846, "y": 0.245 },
+							"size": 0.15693751,
+							"head": { "rotate": 16.345 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.486, "y": 0.503 },
+							"size": 0.3072,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.541, "y": 0.181 },
+							"size": 0.1416,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 5.226 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.47, "y": 0.213 },
+							"size": 0.2279,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.65718865", "g": "0.4775852", "b": "0.46419859", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected1.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.569, "y": 0.315 },
+							"size": 0.1469,
+							"drawDepth": 1.625,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "figure:misc/animal_cowInfected2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.128, "y": 0.412 },
+							"size": 0.1,
+							"drawDepth": 1.875,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_009~1_narration",
+							"style": "narration",
+							"padXFraction": 0.213,
+							"padYFraction": 0.064,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"showNameTags": false,
+					"bg": "comicBG_fieldBrown.jpg",
+					"actorSlots": [
+						{
+							"role": "npc",
+							"form": "frame-sad",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.343, "y": 0.15 },
+							"size": 0.15693751,
+							"drawDepth": -1,
+							"head": { "rotate": -53.077 },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_fieldBrown.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.528, "y": 0.506 },
+							"size": 0.3072,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.4 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landRockSlope.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.794, "y": 0.176 },
+							"size": 0.3688,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:writing_stoneMarker.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.636, "y": 0.223 },
+							"size": 0.0454,
+							"drawDepth": 3,
+							"nameTag": "none",
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_landHillGrass.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.638, "y": 0.222 },
+							"size": 0.2279,
+							"drawDepth": 1.75,
+							"nameTag": "none",
+							"color": { "r": "0.65718865", "g": "0.4775852", "b": "0.46419859", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						},
+						{
+							"assetSpec": "comic:fenceBrown.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": -0.56, "y": 0.181 },
+							"size": 0.1416,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"foot": { "rotate": 5.226 },
+							"color": { "r": "1", "g": "1", "b": "1", "a": "1" },
+							"colorFilter": { "filterName": "sepia", "strength": 0.7 }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_010~1_narration",
+							"style": "narration",
+							"padXFraction": 0.036,
+							"padYFraction": 0.032,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "threeFourths",
+					"bg": "comicBG_villageGloomy.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:roeShadowy2.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.056, "y": 0.151 },
+							"size": 0.236,
+							"nameTag": "none",
+							"color": { "r": "1", "g": "0.65033925", "b": "0.62427747", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.291, "y": 0.767 },
+							"size": 0.568,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -140.28 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_011~1_narration",
+							"style": "narration",
+							"padXFraction": 0.023,
+							"padYFraction": 0.045,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_011~2_narration",
+							"style": "narration",
+							"padXFraction": 0.265,
+							"padYFraction": 0.798,
+							"widthFraction": 0.7196989
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"bg": "comicBG_tavernDark.jpg",
+					"actorSlots": [
+						{
+							"role": "hero",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.452, "y": -0.258 },
+							"size": 0.3415101,
+							"nameTag": "none",
+							"head": { "rotate": -19.221, "scaleY": -1 },
+							"color": { "r": "0.86513078", "g": "0.69122565", "b": "0.45856869", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.22, "y": -0.267 },
+							"size": 0.3415101,
+							"nameTag": "none",
+							"color": { "r": "0.86513078", "g": "0.69122565", "b": "0.45856869", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"facing": "left",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.839, "y": -0.236 },
+							"size": 0.3415101,
+							"nameTag": "none",
+							"color": { "r": "0.86513078", "g": "0.69122565", "b": "0.45856869", "a": "1" }
+						},
+						{
+							"role": "hero4",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.657, "y": -0.258 },
+							"size": 0.3415101,
+							"nameTag": "none",
+							"head": { "rotate": 16.131 },
+							"color": { "r": "0.86513078", "g": "0.69122565", "b": "0.45856869", "a": "1" }
+						},
+						{
+							"role": "hero5",
+							"equipment": {},
+							"focus": "foot",
+							"anchor": { "x": 0.066, "y": -0.273 },
+							"size": 0.3415101,
+							"head": { "rotate": -25.488 },
+							"color": { "r": "0.86513078", "g": "0.69122565", "b": "0.45856869", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_012~1_narration",
+							"style": "narration",
+							"padXFraction": 0.029,
+							"padYFraction": 0.077,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_012~2_hero",
+							"pointerOwner": "hero",
+							"padXFraction": 0.181,
+							"padYFraction": 0.213,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "half",
+					"showNameTags": false,
+					"bg": "comicBG_abstractSky.jpg",
+					"actorSlots": [
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.564, "y": 1.019 },
+							"size": 0.6744,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -146.221 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						},
+						{
+							"assetSpec": "comic:smokeCloud.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.216, "y": 0.865 },
+							"size": 0.6654,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": 21.63 },
+							"color": { "r": "0.14551103", "g": "0.20671758", "b": "0.2417722", "a": "0.68497109" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.237, "y": 0.322 },
+							"drawDepth": -1,
+							"head": { "rotate": 24.086 },
+							"color": { "r": "0.74320054", "g": "0.80881542", "b": "0.84639478", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "genericCampaignPlots_last_Malthides_omen",
+							"textKey": "~01~~panel_013~1_narration",
+							"style": "narration",
+							"padXFraction": 0.295,
+							"padYFraction": 0.083,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"createEntity": {
+				"query": { "baseTag": "human" },
+				"control": "none"
+			}
+		}
+	]
+}
+}
