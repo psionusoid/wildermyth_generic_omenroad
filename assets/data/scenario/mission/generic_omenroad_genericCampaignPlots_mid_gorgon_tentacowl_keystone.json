@@ -1,0 +1,30 @@
+{
+"scenarioInfo": {
+	"id": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone",
+	"type": "MISSION",
+	"nameKey": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone.name",
+	"blurbKey": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone.blurb",
+	"rosterSlots": [
+		{ "type": "greenhorn", "archetype": "warrior" },
+		{ "type": "greenhorn", "archetype": "warrior" },
+		{ "type": "greenhorn", "archetype": "hunter" },
+		{ "type": "greenhorn", "archetype": "hunter" },
+		{ "type": "greenhorn", "archetype": "mystic" }
+	]
+},
+"playableFactions": [
+	{ "factionRole": "HERO", "plotRole": "attacker" },
+	{ "factionRole": "VILLAIN", "plotRole": "defender" }
+],
+"site": {
+	"type": "SITE",
+	"siteMissionPlanId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone"
+},
+"inhabitants": [
+	{
+		"factionRole": "VILLAIN",
+		"threat": { "flavor": "gorgon", "strength": 6 },
+		"calamities": 6
+	}
+]
+}

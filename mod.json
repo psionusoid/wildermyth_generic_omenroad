@@ -1,6 +1,14 @@
 {
-"author": "AngusOfTheDanelion, David Bilsky (Ironskink/Boldest Dungeon), psionusoid, Pteranodon, Steelfeathers",
+"author": "AngusOfTheDandelion, Draconiya, Ironskink, psionusoid, Steelfeathers",
 "name": "Campaign Omenroad Bosses",
 "blurb": "Adds chapter plots for generic campaigns featuring Omenroad bosses",
-"url": "https://wildermyth.com/wiki/Mods/Campaign_Omenroad_Bosses"
+"url": "https://wildermyth.com/wiki/Mods/Campaign_Omenroad_Bosses",
+"customCreditLines": [
+    "Team Omen-ous:",
+    "AngusOfTheDandelion",
+    "David Bilsky [i](Ironskink/Boldest Dungeon)[]",
+    "Draconiya",
+    "psionusoid",
+    "Steelfeathers"
+]
 }

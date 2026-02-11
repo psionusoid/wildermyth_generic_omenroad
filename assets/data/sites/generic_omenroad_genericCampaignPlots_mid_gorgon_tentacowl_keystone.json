@@ -1,0 +1,79 @@
+{
+"declaredEncounterResults": [ "defeat", "victory" ],
+"structure": "custom",
+"skipDefaultPlots": true,
+"details": [
+	{
+		"class": "MapDetail_DrawFloor",
+		"floorTiles": {
+			"offsetX": 20,
+			"offsetY": 4,
+			"xs": [ 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29, 29 ],
+			"ys": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+		},
+		"floorLayer3": {
+			"preset": "biomeTop",
+			"initialValue": "[0,1]*[0,1]",
+			"drawnData": {}
+		},
+		"floorLayer4": {
+			"preset": "biomeBase",
+			"initialValue": "[0,1]*[0,1]",
+			"drawnData": {}
+		}
+	},
+	{
+		"class": "MapDetail_DrawIndoorLighting",
+		"initialValue": "0",
+		"drawIndoorLighting": { "offsetX": 20, "offsetY": 4 }
+	},
+	{
+		"class": "MapDetail_DrawWalls",
+		"tiles": { "offsetX": 20, "offsetY": 4 },
+		"wallStyle": {
+			"texture": "images/wallStoneShort_capped.png",
+			"uvBase": 1,
+			"uvHead": 0,
+			"zHead": -2.5,
+			"stretchSpan": 1.25,
+			"segments": [ 0.5, 4, 4, 4, 2, 2, 1, 1, 0.5 ],
+			"totalSpan": 19,
+			"hasWallCaps": true,
+			"perturbHeadOut": 0.04,
+			"perturbHeadSide": 0.01,
+			"isBoundary": true,
+			"joinWithOtherStyles": false
+		}
+	},
+	{
+		"class": "MapDetail_Door",
+		"locations": { "class": "TileSpec.ExactTiles", "offsetX": 20, "offsetY": 4 }
+	},
+	{ "class": "MapDetail_PlaceScenery", "offsetX": 20, "offsetY": 4 },
+	{
+		"class": "MapDetail_InteriorRegion",
+		"tiles": { "offsetX": 20, "offsetY": 4 },
+		"forbidLampsAndScenery": { "offsetX": 20, "offsetY": 4 }
+	},
+	{
+		"class": "MapDetail_RandomLamps",
+		"drawSpecificArea": {},
+		"drawExactLocations": {},
+		"drawForbidLampsAndScenery": { "offsetX": 20, "offsetY": 4 }
+	},
+	{
+		"class": "MapDetail_RandomScenery",
+		"drawSpecificArea": {},
+		"drawExactLocations": {},
+		"drawForbidScenery": { "offsetX": 20, "offsetY": 4 }
+	},
+	{
+		"class": "MapDetail_Debris",
+		"drawDebrisChance": { "offsetX": 20, "offsetY": 4 }
+	},
+	{
+		"class": "MapDetail_Plot",
+		"plotId": "M_generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone"
+	}
+]
+}
