@@ -19,19 +19,15 @@
 	"icon": "melee",
 	"priority": "1",
 	"cooldown": "oncePerGame",
+	"encounterWeight": "DLC_INSTALLED_OMENROAD",
+	"encounterEnabled": true,
 	"musicOverride": "Music/Campaign"
 },
 "targets": [
 	{ "template": "EVENT" },
 	{ "template": "COMPANY" },
 	{ "role": "town", "template": "INJECTED_SITE", "injectedRole": "town" },
-	{
-		"role": "site3",
-		"template": "INJECTED_ENTITY",
-		"type": "ANY_STATUS",
-		"injectedRole": "site3"
-	},
-	{ "template": "INJECTED_THREAT", "choose": "ANY" },
+	{ "template": "INJECTED_THREAT"},
 	{
 		"template": "HERO_BY_SCORE",
 		"scoreFunction": null,
@@ -40,14 +36,12 @@
 	{
 		"role": "hero2",
 		"template": "HERO_BY_SCORE",
-		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero" ]
 	},
 	{
 		"role": "hero3",
 		"template": "HERO_BY_SCORE",
-		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero", "hero2" ]
 	},
