@@ -112,18 +112,6 @@
 							"color": { "r": "0.00053456", "g": "0.18443653", "b": "0.08238687", "a": "0.59826553" }
 						},
 						{
-							"role": "folk1",
-							"form": "frame-sad",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.803, "y": 0.454 },
-							"size": 0.6568,
-							"drawDepth": -3,
-							"nameTag": "none",
-							"head": { "rotate": -18.206 },
-							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
-						},
-						{
 							"assetSpec": "comicBg:comicBG_mountainsBlueRecolor.jpg",
 							"role": null,
 							"facing": "left",
@@ -152,48 +140,6 @@
 							"padXFraction": 0.04,
 							"widthFraction": 0.7780143,
 							"shrinkToFitText": true
-						},
-						{
-							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_gorgon_malthides_capstone",
-							"textKey": "~01~prompt~panel_001~2_narration",
-							"style": "narration",
-							"backgroundColor": { "r": "0.25289786", "g": "0.59516734", "b": "0.82224596", "a": "0.73121351" },
-							"padXFraction": 0.188,
-							"padYFraction": 0.245,
-							"widthFraction": 0.67350477,
-							"shrinkToFitText": true
-						},
-						{
-							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_gorgon_malthides_capstone",
-							"textKey": "~01~prompt~panel_001~3_hero",
-							"pointerOwner": "hero",
-							"location": "bottomLeft",
-							"padXFraction": 0.456,
-							"padYFraction": 0.124,
-							"shrinkToFitText": true,
-							"pointerAdjust": {
-								"rotate": -8.530778,
-								"dX": -25.44822,
-								"dY": -0.9425287,
-								"scaleX": 0.6281197,
-								"scaleY": 0.6281197
-							}
-						},
-						{
-							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_gorgon_malthides_capstone",
-							"textKey": "~01~prompt~panel_001~4_folk1",
-							"pointerOwner": "folk1",
-							"location": "bottomRight",
-							"padXFraction": 0.212,
-							"shrinkToFitText": true,
-							"pointerAdjust": {
-								"rotate": 13.703218,
-								"dX": 45.241383,
-								"dY": -0.9425288,
-								"scaleX": 0.53005385,
-								"scaleY": 0.53005385,
-								"forcePointerImage": "speechMedium"
-							}
 						}
 					]
 				}
