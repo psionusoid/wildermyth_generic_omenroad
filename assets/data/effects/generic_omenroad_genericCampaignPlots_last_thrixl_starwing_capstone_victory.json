@@ -1,0 +1,443 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+	"modId": "generic_omenroad",
+	"author": "Draconiya"
+},
+"type": "PLOT",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH+(hook_Literary*25)",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "SHIP_WITH.hero",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_interiorDay.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"size": 0.2975,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bookshelfTall2.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.886, "y": 0.5 },
+							"size": 0.4166,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bed.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.196, "y": 0.041 },
+							"size": 0.5333,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						},
+						{
+							"assetSpec": "comic:wallCandle_off.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.6, "y": 0.475 },
+							"size": 0.1877,
+							"drawDepth": 0.5,
+							"nameTag": "none",
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.882, "y": 0.453 },
+							"size": 0.4697,
+							"drawDepth": -1,
+							"head": { "rotate": -9.603 },
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": { "mode": "leaveEquipment" },
+							"anchor": { "x": 0.05, "y": 0.576 },
+							"size": 0.7526,
+							"drawDepth": -1,
+							"head": { "rotate": 4.889 },
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.45 }
+						},
+						{
+							"assetSpec": "comic:comicForeground_rubblePile.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.813, "y": 0.141 },
+							"size": 0.3766,
+							"drawDepth": -2,
+							"nameTag": "none"
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.542, "y": 0.053 },
+							"size": 0.2358,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.75027525", "g": "0.71857679", "b": "0.66590905", "a": "1" },
+							"colorFilter": { "filterName": "hover" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.63172793", "g": "0.40295339", "b": "0.40295348", "a": "1" },
+							"padXFraction": 0.064,
+							"padYFraction": 0.09,
+							"widthFraction": 0.74433905,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"widthFraction": 0.67350477,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_001~3_folk1",
+							"pointerOwner": "folk1",
+							"location": "bottomRight",
+							"padXFraction": 0.028,
+							"padYFraction": 0.038,
+							"widthFraction": 0.5637584,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 3.5331008,
+								"dX": 36.758743,
+								"dY": 5.655173,
+								"scaleX": 0.56383955,
+								"scaleY": 0.56383955,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_001~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.151,
+							"padYFraction": 0.357,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -22.371399,
+								"dX": 8.482645,
+								"dY": -2.8275867,
+								"scaleX": 0.72501403,
+								"scaleY": 0.72501403
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_001~5_hero",
+							"pointerOwner": "hero",
+							"location": "bottomRight",
+							"padXFraction": 0.175,
+							"padYFraction": 0.038,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			},
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "full",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comic:cottageStone.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.941, "y": 1.11 },
+							"size": 0.703,
+							"nameTag": "none",
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"assetSpec": "comicBg:comicBG_hillsRocky.jpg",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.529, "y": 0.525 },
+							"size": 0.2948,
+							"nameTag": "none",
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:rockStackFoothill.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.083, "y": 0.299 },
+							"size": 0.3205,
+							"drawDepth": 1.5,
+							"nameTag": "none",
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstHalf.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.386, "y": 0.531 },
+							"drawDepth": 0,
+							"nameTag": "none",
+							"foot": { "rotate": -108.435 },
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "0.33236995" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.258, "y": 0.345 },
+							"size": 0.2875,
+							"drawDepth": 1.75,
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"role": "hero3",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.161, "y": 0.191 },
+							"size": 0.1746,
+							"drawDepth": 1.875,
+							"head": { "rotate": -12.273 },
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"role": "hero2",
+							"form": "frame-grim",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.016, "y": 0.418 },
+							"size": 0.4905,
+							"drawDepth": 1.25,
+							"head": { "rotate": 7.865 },
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"role": "folk1",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.443, "y": 0.443 },
+							"size": 0.6452,
+							"drawDepth": 0.5,
+							"head": { "rotate": -18.534, "scaleY": -1 },
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						},
+						{
+							"role": "folk3",
+							"form": "frame-sad",
+							"facing": "left",
+							"equipment": { "mode": "removeWeapons" },
+							"anchor": { "x": 0.823, "y": 0.5 },
+							"size": 0.7967,
+							"drawDepth": 0.5,
+							"head": { "rotate": -18.534, "scaleY": 1 },
+							"color": { "r": "0.8960678", "g": "0.83260334", "b": "0.93618214", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_002~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.63172793", "g": "0.40295339", "b": "0.40295348", "a": "1" },
+							"padXFraction": 0.043,
+							"padYFraction": 0.077,
+							"widthFraction": 0.8442036,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_002~2_narration",
+							"style": "narration",
+							"widthFraction": 0.67350477,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_002~3_folk1",
+							"pointerOwner": "folk1",
+							"location": "bottomRight",
+							"padXFraction": 0.028,
+							"padYFraction": 0.038,
+							"widthFraction": 0.5637584,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": 3.5331008,
+								"dX": 36.758743,
+								"dY": 5.655173,
+								"scaleX": 0.56383955,
+								"scaleY": 0.56383955,
+								"forcePointerImage": "speechMedium"
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_002~4_hero2",
+							"pointerOwner": "hero2",
+							"padXFraction": 0.151,
+							"padYFraction": 0.357,
+							"shrinkToFitText": true,
+							"pointerAdjust": {
+								"rotate": -22.371399,
+								"dX": 8.482645,
+								"dY": -2.8275867,
+								"scaleX": 0.72501403,
+								"scaleY": 0.72501403
+							}
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone_victory",
+							"textKey": "~01~~panel_002~5_hero",
+							"pointerOwner": "hero",
+							"location": "bottomRight",
+							"padXFraction": 0.218,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "ancientCartographerMystic_generic",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "middleAge",
+					"setEquipment": "tierTwo",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk1",
+			"npcId": "genericPlots_theLibraryLibrarian",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "farmer",
+					"setAge": "veryOldAge",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk2",
+			"npcId": "genericPlots_theLibraryUnwashedLibrarian",
+			"createEntity": {
+				"query": { "baseTag": "human", "setClass": "farmer", "setEquipment": "clothes" },
+				"control": "none"
+			}
+		},
+		{
+			"role": "folk3",
+			"npcId": "genericPlots_theLibraryUnwashedLibrarian2",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"inRelationTo": "hero",
+					"setGender": "relativeIsAttracted",
+					"setClass": "farmer",
+					"setAge": "closeTo",
+					"setEquipment": "clothes"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}

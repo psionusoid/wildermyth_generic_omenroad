@@ -3,14 +3,14 @@
 "info": {
 	"dataVersion": 1,
 	"sourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_omen",
-	"modId": "Campaign Omenroad Bosses",
+	"modId": "generic_omenroad",
 	"author": "Draconiya",
 	"genericCampaignInfo": {
-		"chapter": "mid",
-		"threatFlavor": "gorgon",
+		"chapter": "last",
+		"threatFlavor": "thrixl",
 		"plotId": "C_generic_keystone",
-		"capstoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_capstone",
-		"keystoneEventId": "generic_omenroad_genericCampaignPlots_mid_gorgon_tentacowl_keystone"
+		"capstoneEventId": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone",
+		"keystoneEventId": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone"
 	}
 },
 "type": "PLOT_OMEN",
