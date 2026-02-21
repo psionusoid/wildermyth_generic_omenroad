@@ -8,7 +8,7 @@
 	"genericCampaignInfo": {
 		"chapter": "last",
 		"threatFlavor": "thrixl",
-		"plotId": "C_generic_keystone",
+		"plotId": "C_generic_keystone_last",
 		"capstoneEventId": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_capstone",
 		"keystoneEventId": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone"
 	}
