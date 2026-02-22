@@ -112,18 +112,6 @@
 							"color": { "r": "0.00053456", "g": "0.18443653", "b": "0.08238687", "a": "0.59826553" }
 						},
 						{
-							"role": "folk1",
-							"form": "frame-sad",
-							"facing": "left",
-							"equipment": {},
-							"anchor": { "x": 0.803, "y": 0.454 },
-							"size": 0.6568,
-							"drawDepth": -3,
-							"nameTag": "none",
-							"head": { "rotate": -18.206 },
-							"color": { "r": "0.7028712", "g": "0.80383056", "b": "0.88672352", "a": "1" }
-						},
-						{
 							"assetSpec": "comicBg:comicBG_mountainsBlueRecolor.jpg",
 							"role": null,
 							"facing": "left",
@@ -586,65 +574,5 @@
 			]
 		}
 	}
-],
-"implications": {
-	"generatedTargets": [
-		{
-			"npcId": "ancientCartographerMystic_generic",
-			"createEntity": {
-				"query": {
-					"baseTag": "human",
-					"setClass": "mystic",
-					"setAge": "middleAge",
-					"setEquipment": "tierTwo",
-					"nameConstraints": "requireLastName"
-				},
-				"control": "none"
-			}
-		},
-		{
-			"role": "folk1",
-			"npcId": "genericPlots_theLibraryLibrarian",
-			"createEntity": {
-				"query": {
-					"baseTag": "human",
-					"setClass": "farmer",
-					"setAge": "veryOldAge",
-					"setEquipment": "clothes"
-				},
-				"control": "none"
-			}
-		},
-		{
-			"role": "folk2",
-			"npcId": "genericPlots_theLibraryUnwashedLibrarian",
-			"createEntity": {
-				"query": {
-					"baseTag": "human",
-					"inRelationTo": "hero2",
-					"setGender": "relativeIsAttracted",
-					"setClass": "farmer",
-					"setAge": "closeTo",
-					"setEquipment": "clothes"
-				},
-				"control": "none"
-			}
-		},
-		{
-			"role": "folk3",
-			"npcId": "genericPlots_theLibraryUnwashedLibrarian2",
-			"createEntity": {
-				"query": {
-					"baseTag": "human",
-					"inRelationTo": "hero",
-					"setGender": "relativeIsAttracted",
-					"setClass": "farmer",
-					"setAge": "closeTo",
-					"setEquipment": "clothes"
-				},
-				"control": "none"
-			}
-		}
-	]
-}
+]
 }
