@@ -37,29 +37,29 @@
 		"notAlreadyMatchedAs": []
 	},
 	{
+		"template": "HERO_BY_SCORE",
+		"scoreFunction": "(LEVEL*10)+(hook_Dreamer*10000)",
+		"notAlreadyMatchedAs": [ "hook" ]
+	},
+	{
 		"role": "loner",
 		"template": "HERO_BY_SCORE",
 		"scoreFunction": "((theme_star*10000)+(hook_Wildheart*100))+LONER",
 		"notAlreadyMatchedAs": [ "hook", "hero" ]
 	},
 	{
-		"template": "HERO_BY_SCORE",
-		"scoreFunction": "(LEVEL*10)+(hook_Dreamer*10000)",
-		"notAlreadyMatchedAs": [ "hook" ]
-	},
-	{
 		"role": "hero2",
 		"template": "HERO_BY_SCORE",
 		"choose": "BY_SCORE_OPTIONAL",
-		"scoreFunction": "level",
-		"notAlreadyMatchedAs": [ "hook", "loner", "hero" ]
+		"scoreFunction": "LEVEL",
+		"notAlreadyMatchedAs": [ "hook", "hero", "loner" ]
 	},
 	{
 		"role": "hero3",
 		"template": "HERO_BY_SCORE",
 		"choose": "BY_SCORE_OPTIONAL",
 		"scoreFunction": null,
-		"notAlreadyMatchedAs": [ "hook", "loner", "hero", "hero2" ]
+		"notAlreadyMatchedAs": [ "hook", "hero", "loner", "hero2" ]
 	}
 ],
 "outcomes": [
