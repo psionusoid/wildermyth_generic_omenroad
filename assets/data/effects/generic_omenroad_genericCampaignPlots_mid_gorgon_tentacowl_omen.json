@@ -30,19 +30,19 @@
 	{ "template": "INJECTED_THREAT" },
 	{
 		"template": "HERO_BY_SCORE",
-		"scoreFunction": "(BOOKISH+(hook_Literary*60))+(LEVEL*5)",
+		"scoreFunction": null,
 		"notAlreadyMatchedAs": []
 	},
 	{
 		"role": "hero2",
 		"template": "HERO_BY_SCORE",
-		"scoreFunction": "((LOVER_WITH.hero*50)+(FRIEND_WITH.hero*40))+SHIP_WITH.hero",
+		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero" ]
 	},
 	{
 		"role": "hero3",
 		"template": "HERO_BY_SCORE",
-		"scoreFunction": "LEVEL",
+		"scoreFunction": null,
 		"notAlreadyMatchedAs": [ "hero", "hero2" ]
 	},
 	{
@@ -164,21 +164,5 @@
 			}
 		]
 	}
-],
-"implications": {
-	"generatedTargets": [
-		{
-			"createEntity": {
-				"query": {
-					"baseTag": "human",
-					"inRelationTo": "hero",
-					"setGender": "relativeIsAttracted",
-					"setAge": "closeTo",
-					"setEquipment": "clothes"
-				},
-				"control": "none"
-			}
-		}
-	]
-}
+]
 }
