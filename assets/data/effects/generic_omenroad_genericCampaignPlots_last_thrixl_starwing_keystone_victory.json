@@ -1,0 +1,207 @@
+{
+"id": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone_victory",
+"info": {
+	"dataVersion": 1,
+	"sourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone_victory",
+	"modId": "generic_omenroad",
+	"author": "Draconiya"
+},
+"type": "PLOT",
+"verb": "MANEUVER",
+"ability": { "icon": "melee", "priority": "1", "cooldown": "oncePerGame" },
+"targets": [
+	{ "template": "EVENT" },
+	{ "template": "COMPANY", "choose": "ANY" },
+	{ "template": "INJECTED_SITE" },
+	{ "template": "INJECTED_TILE" },
+	{
+		"role": "threat",
+		"template": "INJECTED_THREAT",
+		"choose": "ANY",
+		"injectedRole": "threat"
+	},
+	{ "template": "INJECTED_PARTY", "choose": "ANY" },
+	{ "template": "DEAD_HEROES" },
+	{ "template": "MAIMED_HEROES" },
+	{
+		"role": "escapedHero",
+		"template": "MAIMED_HEROES",
+		"injectedRole": "escapedHero"
+	},
+	{
+		"role": "hero",
+		"template": "PICK_BY_SCORE",
+		"scoreFunction": "BOOKISH",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": []
+	},
+	{
+		"role": "hero2",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": "LEVEL",
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero" ]
+	},
+	{
+		"role": "hero3",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2" ]
+	},
+	{
+		"role": "hero4",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3" ]
+	},
+	{
+		"role": "hero5",
+		"template": "PICK_BY_SCORE",
+		"choose": "BY_SCORE_OPTIONAL",
+		"scoreFunction": null,
+		"fromRoles": [ "party", "maimedHero" ],
+		"notAlreadyMatchedAs": [ "hero", "hero2", "hero3", "hero4" ]
+	}
+],
+"outcomes": [
+	{
+		"class": "Description",
+		"script": [
+			{
+				"class": "comicNode_Panel",
+				"panel": {
+					"size": "twoThirds",
+					"showNameTags": false,
+					"actorSlots": [
+						{
+							"assetSpec": "comicBg:comicBG_hillsPineDay.jpg",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.021, "y": 0.636 },
+							"size": 0.1525,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185442", "b": "0.80518836", "a": "1" },
+							"colorFilter": { "filterName": "hover", "strength": 0.5 }
+						},
+						{
+							"assetSpec": "comic:entranceWindowInterior.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.15, "y": 0.5 },
+							"size": 0.5493,
+							"drawDepth": 0,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:wallShelf_books.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.408, "y": 0.597 },
+							"size": 0.2875,
+							"drawDepth": -1,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bookPileSmall.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 1.337, "y": 0.059 },
+							"size": 0.2152,
+							"drawDepth": -0.375,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:bucketsWoodSmall.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 1.074, "y": 0.009 },
+							"size": 0.5436,
+							"drawDepth": -0.25,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "scenery:deskPapers.png",
+							"role": null,
+							"facing": "left",
+							"focus": "foot",
+							"anchor": { "x": 0.536, "y": 0.04 },
+							"size": 0.4678,
+							"drawDepth": -0.5,
+							"nameTag": "none",
+							"color": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" }
+						},
+						{
+							"assetSpec": "comic:light_starburstLarge.png",
+							"role": null,
+							"focus": "foot",
+							"anchor": { "x": 0.998, "y": 0.5 },
+							"size": 0.2881,
+							"drawDepth": -2,
+							"nameTag": "none",
+							"color": { "r": "0.96937746", "g": "0.94185448", "b": "0.80518836", "a": "0.07514451" }
+						},
+						{
+							"role": "hero",
+							"form": "frame-grim",
+							"equipment": {},
+							"anchor": { "x": 0.155, "y": 0.468 },
+							"size": 0.6123,
+							"drawDepth": -0.75,
+							"head": { "rotate": -28.744, "scaleY": -1 },
+							"color": { "r": "0.63294727", "g": "0.63294727", "b": "0.63294727", "a": "1" }
+						}
+					],
+					"textSlots": [
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone_victory",
+							"textKey": "~01~~panel_001~1_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.033,
+							"padYFraction": 0.001,
+							"widthFraction": 0.95402634,
+							"shrinkToFitText": true
+						},
+						{
+							"textSourceFile": "generic_omenroad_genericCampaignPlots_last_thrixl_starwing_keystone_victory",
+							"textKey": "~01~~panel_001~2_narration",
+							"style": "narration",
+							"backgroundColor": { "r": "0.55780309", "g": "0.55780309", "b": "0.55780309", "a": "1" },
+							"padXFraction": 0.286,
+							"padYFraction": 0.41,
+							"shrinkToFitText": true
+						}
+					]
+				}
+			}
+		]
+	}
+],
+"implications": {
+	"generatedTargets": [
+		{
+			"npcId": "ancientCartographerMystic_generic",
+			"createEntity": {
+				"query": {
+					"baseTag": "human",
+					"setClass": "mystic",
+					"setAge": "middleAge",
+					"setEquipment": "tierTwo",
+					"nameConstraints": "requireLastName"
+				},
+				"control": "none"
+			}
+		}
+	]
+}
+}
